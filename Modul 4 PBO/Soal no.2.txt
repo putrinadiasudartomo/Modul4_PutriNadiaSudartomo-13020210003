@@ -1,0 +1,65 @@
+PUTRI NADIA SUDARTOMO
+13020210003
+
+2. Buatlah satu kelas yang nantinya kelas tersebut memiliki 3 kelas turunan, dan juga  terapkan method overriding pada kelas turunannya
+
+
+package b1modul4.overriding;
+
+public class B1modul4Overriding {
+    public static void main(String[] args) {
+        Kendaraan kendaraan = new Kendaraan();
+        Motor motor = new Motor();
+        Merk merk = new Merk();
+
+        motor.setNama("Royal Enfield Himalaya");
+        merk.setNama("Royal Enfield");
+
+        System.out.println("Nama Motor : " + motor.getNama());
+        System.out.print("Tokoh Motor : ");
+        motor.tampilkanTokoh();
+
+        System.out.println("\nNama Merk : " + merk.getNama());
+        System.out.print("Tokoh Merk : ");
+        merk.tampilkanTokoh();
+    }
+}
+
+
+package b1modul4.overriding;
+
+class Motor extends Kendaraan {
+    @Override
+    public void tampilkanTokoh() {
+        System.out.println("Nusantara Royal Enfield Motor");
+    }
+}
+
+
+package b1modul4.overriding;
+
+class Merk extends Kendaraan {
+    @Override
+    public void tampilkanTokoh() {
+        System.out.println("Royal Enfield");
+    }
+}
+
+
+package  b1modul4.overriding;
+
+class Kendaraan {
+    private String nama;
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void tampilkanTokoh() {
+        System.out.println("Tidak ada tokoh");
+    }
+}
